@@ -11,6 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      handball.belongsTo(models.jugador, {
+        as: "jugador",
+        foreignKey: "jugadorId",
+      });
     }
   }
   handball.init({

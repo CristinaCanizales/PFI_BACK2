@@ -6,7 +6,6 @@ module.exports = {
       .create({
         numero: req.body.numero,
         posicion: req.body.posicion,
-        entrenamientos: req.body.entrenamientos,
         equipoId: req.body.equipoId,
         usuarioId: req.body.UsuarioId,
       })

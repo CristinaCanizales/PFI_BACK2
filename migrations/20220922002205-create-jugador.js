@@ -1,7 +1,7 @@
 "use strict";
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("jugadores", {
+    await queryInterface.createTable("jugadors", {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -13,9 +13,6 @@ module.exports = {
       },
       posicion: {
         type: Sequelize.STRING,
-      },
-      entrenamientos: {
-        type: Sequelize.JSON,
       },
       equipoId: {
         type: Sequelize.INTEGER,
@@ -34,6 +31,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("jugadores");
+    await queryInterface.dropTable("jugadors");
   },
 };

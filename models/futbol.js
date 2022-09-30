@@ -9,6 +9,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      futbol.belongsTo(models.jugador, {
+        as: "jugador",
+        foreignKey: "jugadorId",
+      });
     }
   }
   futbol.init(

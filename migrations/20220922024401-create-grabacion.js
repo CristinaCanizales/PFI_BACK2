@@ -1,7 +1,7 @@
 "use strict";
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("grabaciones", {
+    await queryInterface.createTable("grabacions", {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -15,9 +15,6 @@ module.exports = {
         type: Sequelize.DATE,
       },
       partidoId: {
-        type: Sequelize.INTEGER,
-      },
-      equipoId: {
         type: Sequelize.INTEGER,
       },
       video: {
@@ -34,6 +31,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("grabaciones");
+    await queryInterface.dropTable("grabacions");
   },
 };

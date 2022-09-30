@@ -2,14 +2,19 @@
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    return queryInterface.bulkInsert("rols", [
+    return queryInterface.bulkInsert("deportes", [
       {
-        nombre: "Jugador",
+        nombre: "Handball",
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       {
-        nombre: "Cuerpo técnico",
+        nombre: "Volleyball",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        nombre: "Futbol",
         createdAt: new Date(),
         updatedAt: new Date(),
       },
@@ -17,6 +22,6 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    return queryInterface.bulkDelete("rols", null, {});
+    return queryInterface.bulkDelete("deportes", null, {});
   },
 };

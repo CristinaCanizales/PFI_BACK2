@@ -9,6 +9,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      grabacion.belongsTo(models.partido, {
+        as: "partido",
+        foreignKey: "partidoId",
+      });
     }
   }
   grabacion.init(
@@ -16,7 +20,6 @@ module.exports = (sequelize, DataTypes) => {
       titulo: DataTypes.STRING,
       fecha: DataTypes.DATE,
       partidoId: DataTypes.INTEGER,
-      equipoId: DataTypes.INTEGER,
       video: DataTypes.STRING,
     },
     {
