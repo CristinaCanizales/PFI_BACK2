@@ -1,54 +1,56 @@
-"use strict";
+'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("futbols", {
+    await queryInterface.createTable("handballs", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      golAdentro: {
+      gol7m: {
         type: Sequelize.INTEGER,
       },
-      golAfuera: {
+      gol6m: {
         type: Sequelize.INTEGER,
       },
-      golTiroLibre: {
+      golContra: {
         type: Sequelize.INTEGER,
       },
       golPenal: {
         type: Sequelize.INTEGER,
       },
-      golCabeza: {
+      atajada: {
         type: Sequelize.INTEGER,
       },
-      amarilla: {
+      errada: {
         type: Sequelize.INTEGER,
       },
-      roja: {
+      robada: {
         type: Sequelize.INTEGER,
       },
-      faltasCometidas: {
+      parada: {
         type: Sequelize.INTEGER,
       },
-      faltasRecibidas: {
+      expulsion: {
         type: Sequelize.INTEGER,
       },
-      pases: {
-        type: Sequelize.INTEGER,
-      },
-      intercepciones: {
-        type: Sequelize.INTEGER,
-      },
-      atajadas: {
-        type: Sequelize.INTEGER,
-      },
-      contras: {
+      perdida: {
         type: Sequelize.INTEGER,
       },
       jugadorId: {
         type: Sequelize.INTEGER,
+        references: {
+          model: "jugadors",
+          key: "id",
+        },
+      },
+      partidoId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: "partidos",
+          key: "id",
+        },
       },
       createdAt: {
         allowNull: false,
@@ -61,6 +63,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("futbols");
-  },
+    await queryInterface.dropTable('handballs');
+  }
 };

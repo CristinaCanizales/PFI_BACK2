@@ -13,6 +13,10 @@ module.exports = (sequelize, DataTypes) => {
         as: "jugador",
         foreignKey: "jugadorId",
       });
+      volleyball.belongsTo(models.partido, {
+        as: "partido",
+        foreignKey: "partidoId",
+      });
     }
   }
   volleyball.init(
@@ -25,6 +29,7 @@ module.exports = (sequelize, DataTypes) => {
       defensa: DataTypes.INTEGER,
       punto: DataTypes.INTEGER,
       jugadorId: DataTypes.INTEGER,
+      partidoId: DataTypes.INTEGER,
     },
     {
       sequelize,

@@ -15,23 +15,31 @@ module.exports = (sequelize, DataTypes) => {
         as: "jugador",
         foreignKey: "jugadorId",
       });
+      handball.belongsTo(models.partido, {
+        as: "partido",
+        foreignKey: "partidoId",
+      });
     }
   }
-  handball.init({
-    gol7m: DataTypes.INTEGER,
-    gol6m: DataTypes.INTEGER,
-    golContra: DataTypes.INTEGER,
-    golPenal: DataTypes.INTEGER,
-    atajada: DataTypes.INTEGER,
-    errada: DataTypes.INTEGER,
-    robada: DataTypes.INTEGER,
-    parada: DataTypes.INTEGER,
-    expulsion: DataTypes.INTEGER,
-    perdida: DataTypes.INTEGER,
-    jugadorId: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'handball',
-  });
+  handball.init(
+    {
+      gol7m: DataTypes.INTEGER,
+      gol6m: DataTypes.INTEGER,
+      golContra: DataTypes.INTEGER,
+      golPenal: DataTypes.INTEGER,
+      atajada: DataTypes.INTEGER,
+      errada: DataTypes.INTEGER,
+      robada: DataTypes.INTEGER,
+      parada: DataTypes.INTEGER,
+      expulsion: DataTypes.INTEGER,
+      perdida: DataTypes.INTEGER,
+      jugadorId: DataTypes.INTEGER,
+      partidoId: DataTypes.INTEGER,
+    },
+    {
+      sequelize,
+      modelName: "handball",
+    }
+  );
   return handball;
 };

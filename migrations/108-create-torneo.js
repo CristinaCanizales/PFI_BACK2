@@ -1,27 +1,35 @@
-"use strict";
+'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("partidos", {
+    await queryInterface.createTable("torneos", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      equipoAId: {
-        type: Sequelize.INTEGER,
+      nombre: {
+        type: Sequelize.STRING,
       },
-      equipoBId: {
-        type: Sequelize.INTEGER,
-      },
-      fechaPartido: {
+      anioTorneo: {
         type: Sequelize.DATEONLY,
+      },
+      descripcion: {
+        type: Sequelize.TEXT,
       },
       ganadorId: {
         type: Sequelize.INTEGER,
+        references: {
+          model: "equipos",
+          key: "id",
+        },
       },
-      torneoId: {
+      deporteId: {
         type: Sequelize.INTEGER,
+        references: {
+          model: "deportes",
+          key: "id",
+        },
       },
       createdAt: {
         allowNull: false,
@@ -34,6 +42,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("partidos");
-  },
+    await queryInterface.dropTable('torneos');
+  }
 };

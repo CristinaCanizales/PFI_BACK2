@@ -1,24 +1,32 @@
 "use strict";
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("jugadors", {
+    await queryInterface.createTable("equipos", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      numero: {
-        type: Sequelize.INTEGER,
-      },
-      posicion: {
+      nombre: {
         type: Sequelize.STRING,
       },
-      equipoId: {
-        type: Sequelize.INTEGER,
+      genero: {
+        type: Sequelize.STRING,
       },
-      usuarioId: {
+      clubId: {
         type: Sequelize.INTEGER,
+        references: {
+          model: "clubs",
+          key: "id",
+        },
+      },
+      deporteId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: "deportes",
+          key: "id",
+        },
       },
       createdAt: {
         allowNull: false,
@@ -31,6 +39,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("jugadors");
+    await queryInterface.dropTable("equipos");
   },
 };

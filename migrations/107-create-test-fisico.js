@@ -1,39 +1,43 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('testFisicos', {
+    await queryInterface.createTable("testFisicos", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       resistencia: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       velocidad: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       saltoAlto: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       saltoLargo: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       fechaTest: {
-        type: Sequelize.DATEONLY
+        type: Sequelize.DATEONLY,
       },
       jugadorId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: "jugadors",
+          key: "id",
+        },
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+      },
     });
   },
   async down(queryInterface, Sequelize) {

@@ -1,38 +1,27 @@
 "use strict";
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("usuarios", {
+    await queryInterface.createTable("grabacions", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      rolId: {
+      titulo: {
+        type: Sequelize.STRING,
+      },
+      fecha: {
+        type: Sequelize.DATE,
+      },
+      partidoId: {
         type: Sequelize.INTEGER,
+        references: {
+          model: "partidos",
+          key: "id",
+        },
       },
-      nombre: {
-        type: Sequelize.STRING,
-      },
-      apellido: {
-        type: Sequelize.STRING,
-      },
-      correo: {
-        type: Sequelize.STRING,
-      },
-      contrasena: {
-        type: Sequelize.STRING,
-      },
-      edad: {
-        type: Sequelize.INTEGER,
-      },
-      direccion: {
-        type: Sequelize.STRING,
-      },
-      telefono: {
-        type: Sequelize.STRING,
-      },
-      foto: {
+      video: {
         type: Sequelize.STRING,
       },
       createdAt: {
@@ -46,6 +35,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("usuarios");
+    await queryInterface.dropTable("grabacions");
   },
 };

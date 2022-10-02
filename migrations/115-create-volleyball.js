@@ -31,6 +31,17 @@ module.exports = {
       },
       jugadorId: {
         type: Sequelize.INTEGER,
+        references: {
+          model: "jugadors",
+          key: "id",
+        },
+      },
+      partidoId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: "partidos",
+          key: "id",
+        },
       },
       createdAt: {
         allowNull: false,

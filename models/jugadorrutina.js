@@ -1,7 +1,5 @@
 "use strict";
 const { Model } = require("sequelize");
-const jugador = require("../models").jugador;
-const entrenamiento = require("../models").entrenamiento;
 module.exports = (sequelize, DataTypes) => {
   class jugadorRutina extends Model {
     /**
@@ -15,20 +13,8 @@ module.exports = (sequelize, DataTypes) => {
   }
   jugadorRutina.init(
     {
-      jugadorId: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: jugador,
-          key: "id",
-        },
-      },
-      entrenamientoId: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: entrenamiento,
-          key: "id",
-        },
-      },
+      jugadorId: DataTypes.INTEGER,
+      entrenamientoId: DataTypes.INTEGER,
     },
     {
       sequelize,

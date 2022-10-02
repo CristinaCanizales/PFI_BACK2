@@ -13,6 +13,10 @@ module.exports = (sequelize, DataTypes) => {
         as: "jugador",
         foreignKey: "jugadorId",
       });
+      futbol.belongsTo(models.partido, {
+        as: "partido",
+        foreignKey: "partidoId",
+      });
     }
   }
   futbol.init(
@@ -31,6 +35,7 @@ module.exports = (sequelize, DataTypes) => {
       atajadas: DataTypes.INTEGER,
       contras: DataTypes.INTEGER,
       jugadorId: DataTypes.INTEGER,
+      partidoId: DataTypes.INTEGER,
     },
     {
       sequelize,

@@ -1,0 +1,34 @@
+const Sequelize = require("sequelize");
+const testFisico = require("../models").testFisico;
+module.exports = {
+  create(req, res) {
+    return testFisico
+      .create({
+        resistencia: req.body.resistencia,
+        velocidad: req.body.velocidad,
+        saltoAlto: req.body.saltoAlto,
+        saltoLargo: req.body.saltoLargo,
+        fechaTest: req.body.fechaTest,
+        jugadorId: req.body.jugadorId,
+      })
+      .then((testFisico) => res.status(200).send(testFisico))
+      .catch((error) => res.status(400).send(error));
+  },
+  list(_, res) {
+    return testFisico
+      .findAll({})
+      .then((testFisico) => res.status(200).send(testFisico))
+      .catch((error) => res.status(400).send(error));
+  },
+  find(req, res) {
+    return testFisico
+      .findAll({
+        where: {
+          jugadorId: req.params.jugadorId,
+          fechaTest: req.params.fechaTest,
+        },
+      })
+      .then((testFisico) => res.status(200).send(testFisico))
+      .catch((error) => res.status(400).send(error));
+  },
+};
