@@ -1,33 +1,19 @@
-"use strict";
+'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("volleyballs", {
+    await queryInterface.createTable("handballs", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      acceso: {
+      accionId: {
         type: Sequelize.INTEGER,
-      },
-      saque: {
-        type: Sequelize.INTEGER,
-      },
-      recepcion: {
-        type: Sequelize.INTEGER,
-      },
-      armado: {
-        type: Sequelize.INTEGER,
-      },
-      bloqueo: {
-        type: Sequelize.INTEGER,
-      },
-      defensa: {
-        type: Sequelize.INTEGER,
-      },
-      punto: {
-        type: Sequelize.INTEGER,
+        references: {
+          model: "accions",
+          key: "id",
+        },
       },
       jugadorId: {
         type: Sequelize.INTEGER,
@@ -54,6 +40,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("volleyballs");
-  },
+    await queryInterface.dropTable('handballs');
+  }
 };

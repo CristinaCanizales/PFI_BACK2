@@ -14,7 +14,9 @@ module.exports = {
   },
   list(_, res) {
     return jugador
-      .findAll({})
+      .findAll({
+        include: [{ all: true }],
+      })
       .then((jugador) => res.status(200).send(jugador))
       .catch((error) => res.status(400).send(error));
   },

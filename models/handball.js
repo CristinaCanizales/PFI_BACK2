@@ -11,6 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      handball.belongsTo(models.accion, {
+        as: "accion",
+        foreignKey: "accionId",
+      });
       handball.belongsTo(models.jugador, {
         as: "jugador",
         foreignKey: "jugadorId",
@@ -23,16 +27,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   handball.init(
     {
-      gol7m: DataTypes.INTEGER,
-      gol6m: DataTypes.INTEGER,
-      golContra: DataTypes.INTEGER,
-      golPenal: DataTypes.INTEGER,
-      atajada: DataTypes.INTEGER,
-      errada: DataTypes.INTEGER,
-      robada: DataTypes.INTEGER,
-      parada: DataTypes.INTEGER,
-      expulsion: DataTypes.INTEGER,
-      perdida: DataTypes.INTEGER,
+      accionId: DataTypes.INTEGER,
       jugadorId: DataTypes.INTEGER,
       partidoId: DataTypes.INTEGER,
     },

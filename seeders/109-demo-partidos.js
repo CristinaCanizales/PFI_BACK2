@@ -21,6 +21,24 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
       },
+      {
+        equipoAId: 2,
+        equipoBId: 4,
+        fechaPartido: new Date(2022, 5, 20),
+        ganadorId: 2,
+        torneoId: 1,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        equipoAId: 2,
+        equipoBId: 3,
+        fechaPartido: new Date(2022, 3, 22),
+        ganadorId: 2,
+        torneoId: 1,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
     ]);
   },
 

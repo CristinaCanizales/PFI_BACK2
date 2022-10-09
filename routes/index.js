@@ -1,11 +1,12 @@
 /* Controllers */
+const accionController = require("../controllers/accion");
 const clubController = require("../controllers/club");
 const deporteController = require("../controllers/deporte");
 const entrenamientoController = require("../controllers/entrenamiento");
 const equipoController = require("../controllers/equipo");
 const futbolController = require("../controllers/futbol");
 const grabacionController = require("../controllers/grabacion");
-const handballController = require("../controllers/entrenamiento");
+const handballController = require("../controllers/handball");
 const jugadorController = require("../controllers/jugador");
 const jugadorRutinaController = require("../controllers/jugadorRutina");
 const partidoController = require("../controllers/partido");
@@ -22,6 +23,15 @@ module.exports = (app) => {
       message: "No tienes acceso a la API de My Team Stats",
     })
   );
+
+  //Accion
+  app.post("/acciones/nuevo", accionController.create);
+  app.get("/acciones", accionController.list);
+  app.get("/acciones/find/", accionController.find);
+  app.get("/acciones/futbol/", accionController.findFutbol);
+  app.get("/acciones/volleyball/", accionController.findVolleyball);
+  app.get("/acciones/handball/", accionController.findHandball);
+
   //Club
   app.post("/clubes/nuevo", clubController.create);
   app.get("/clubes", clubController.list);
