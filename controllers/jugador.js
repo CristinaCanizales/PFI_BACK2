@@ -1,4 +1,5 @@
 const Sequelize = require("sequelize");
+const testFisico = require("./testFisico");
 const jugador = require("../models").jugador;
 module.exports = {
   create(req, res) {
@@ -7,7 +8,7 @@ module.exports = {
         numero: req.body.numero,
         posicion: req.body.posicion,
         equipoId: req.body.equipoId,
-        usuarioId: req.body.UsuarioId,
+        usuarioId: req.body.usuarioId,
       })
       .then((jugador) => res.status(200).send(jugador))
       .catch((error) => res.status(400).send(error));
@@ -22,12 +23,17 @@ module.exports = {
   },
   find(req, res) {
     return jugador
-      .findAll({
-        where: {
-          numero: req.params.numero,
-          equipo: req.params.equipo,
+      .findAll(
+        {
+          where: {
+            numero: req.params.numero,
+            equipo: req.params.equipo,
+          },
         },
-      })
+        {
+          include: [{ all: true }],
+        }
+      )
       .then((jugador) => res.status(200).send(jugador))
       .catch((error) => res.status(400).send(error));
   },

@@ -21,20 +21,20 @@ module.exports = (sequelize, DataTypes) => {
         through: "jugadorRutina",
       });
       jugador.hasMany(models.testFisico, {
-        as: "test",
-        foreignKey: "id",
+        as: "tests",
+        foreignKey: "jugadorId",
       });
       jugador.hasMany(models.handball, {
         as: "handball",
-        foreignKey: "id",
+        foreignKey: "jugadorId",
       });
       jugador.hasMany(models.futbol, {
         as: "futbol",
-        foreignKey: "id",
+        foreignKey: "jugadorId",
       });
       jugador.hasMany(models.volleyball, {
         as: "volleyball",
-        foreignKey: "id",
+        foreignKey: "jugadorId",
       });
     }
   }

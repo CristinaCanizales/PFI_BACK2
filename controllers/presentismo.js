@@ -14,7 +14,9 @@ module.exports = {
   },
   list(_, res) {
     return presentismo
-      .findAll({})
+      .findAll({
+        include: [{ all: true }],
+      })
       .then((presentismo) => res.status(200).send(presentismo))
       .catch((error) => res.status(400).send(error));
   },

@@ -13,15 +13,15 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       deporte.hasMany(models.equipo, {
         as: "equipos",
-        foreignKey: "id",
+        foreignKey: "deporteId",
       });
       deporte.hasMany(models.torneo, {
         as: "torneos",
-        foreignKey: "id",
+        foreignKey: "deporteId",
       });
       deporte.hasMany(models.accion, {
         as: "acciones",
-        foreignKey: "id",
+        foreignKey: "deporteId",
       });
     }
   }

@@ -106,6 +106,7 @@ module.exports = (app) => {
   app.post("/usuarios/nuevo", usuarioController.create);
   app.get("/usuarios", usuarioController.list);
   app.get("/usuarios/find/correo", usuarioController.find);
+  app.post("/usuarios/login", usuarioController.logIn);
 
   //Volleyball
   app.post("/volleyball/nuevo", volleyballController.create);

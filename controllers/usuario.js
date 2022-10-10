@@ -33,4 +33,22 @@ module.exports = {
       .then((usuario) => res.status(200).send(usuario))
       .catch((error) => res.status(400).send(error));
   },
+
+  logIn(req, res) {
+    return usuario
+      .findOne({
+        where: {
+          correo: req.body.correo.toLowerCase().trim(),
+          contrasena: req.body.contrasena,
+        },
+      })
+      .then((usuario) => {
+        if (usuario === null) {
+          res.status(200).send({ error: "Usuario o contraseña incorrectos" });
+        } else {
+          res.status(200).send(usuario);
+        }
+      })
+      .catch((error) => res.status(400).send(error));
+  },
 };

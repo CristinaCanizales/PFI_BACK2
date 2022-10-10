@@ -15,11 +15,11 @@ module.exports = (sequelize, DataTypes) => {
       });
       usuario.hasOne(models.jugador, {
         as: "jugador",
-        foreignKey: "id",
+        foreignKey: "usuarioId",
       });
       usuario.hasMany(models.presentismo, {
         as: "presentismo",
-        foreignKey: "id",
+        foreignKey: "usuarioId",
       });
     }
   }

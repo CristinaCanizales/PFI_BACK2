@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       partido.hasOne(models.grabacion, {
         as: "grabacion",
-        foreignKey: "id",
+        foreignKey: "partidoId",
       });
       partido.belongsTo(models.equipo, {
         as: "equipoA",
@@ -31,15 +31,15 @@ module.exports = (sequelize, DataTypes) => {
       });
       partido.hasMany(models.futbol, {
         as: "futbol",
-        foreignKey: "id",
+        foreignKey: "partidoId",
       });
       partido.hasMany(models.handball, {
         as: "handball",
-        foreignKey: "id",
+        foreignKey: "partidoId",
       });
       partido.hasMany(models.volleyball, {
         as: "volleyball",
-        foreignKey: "id",
+        foreignKey: "partidoId",
       });
     }
   }

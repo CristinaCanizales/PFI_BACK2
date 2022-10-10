@@ -15,15 +15,15 @@ module.exports = (sequelize, DataTypes) => {
       });
       accion.hasMany(models.futbol, {
         as: "futbol",
-        foreignKey: "id",
+        foreignKey: "accionId",
       });
       accion.hasMany(models.volleyball, {
         as: "volleyball",
-        foreignKey: "id",
+        foreignKey: "accionId",
       });
       accion.hasMany(models.handball, {
         as: "handball",
-        foreignKey: "id",
+        foreignKey: "accionId",
       });
     }
   }
