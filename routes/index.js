@@ -103,7 +103,7 @@ module.exports = (app) => {
   app.get("/torneos/find/", torneoController.find);
 
   //Usuario
-  app.post("/usuarios/nuevo", usuarioController.create);
+  app.post("/usuarios/register", usuarioController.create);
   app.get("/usuarios", usuarioController.list);
   app.get("/usuarios/find/correo", usuarioController.find);
   app.post("/usuarios/login", usuarioController.logIn);

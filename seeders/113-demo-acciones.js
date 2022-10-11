@@ -64,7 +64,7 @@ module.exports = {
         updatedAt: new Date(),
       },
       {
-        nombre: "Intercepcióne",
+        nombre: "Intercepción",
         deporteId: 1,
         createdAt: new Date(),
         updatedAt: new Date(),

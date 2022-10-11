@@ -1,24 +1,44 @@
-'use strict';
+"use strict";
 
 module.exports = {
-  async up (queryInterface, Sequelize) {
-    /**
-     * Add seed commands here.
-     *
-     * Example:
-     * await queryInterface.bulkInsert('People', [{
-     *   name: 'John Doe',
-     *   isBetaMember: false
-     * }], {});
-    */
+  async up(queryInterface, Sequelize) {
+    return queryInterface.bulkInsert("entrenamientos", [
+      {
+        title: "Brazos",
+        video: "ZIm_qrJSOds",
+        detalleRutina: "biceps, triceps",
+        categoria: "Entrenamiento",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        title: "Piernas",
+        video: "HNosAVcpsz4",
+        detalleRutina: "cuadriceps, abductores, aductores, sentadillas",
+        categoria: "Entrenamiento",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        title: "Abdomen",
+        video: "Pvxj-1dgVk0",
+        detalleRutina: "cortos, medios, largos",
+        categoria: "Entrenamiento",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        title: "Hombros",
+        video: "rzM6qoSAuVg",
+        detalleRutina: "manguito rotador",
+        categoria: "Lesión",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+    ]);
   },
 
-  async down (queryInterface, Sequelize) {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
-  }
+  async down(queryInterface, Sequelize) {
+    return queryInterface.bulkDelete("entrenamientos", null, {});
+  },
 };
