@@ -43,7 +43,6 @@ module.exports = {
   },
 
   logIn(req, res) {
-    console.log(req.body);
     return usuario
       .findOne({
         where: {
