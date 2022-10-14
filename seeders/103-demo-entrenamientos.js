@@ -4,7 +4,7 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     return queryInterface.bulkInsert("entrenamientos", [
       {
-        title: "Brazos",
+        titulo: "Brazos",
         video: "ZIm_qrJSOds",
         detalleRutina: "biceps, triceps",
         categoria: "Entrenamiento",
@@ -12,7 +12,7 @@ module.exports = {
         updatedAt: new Date(),
       },
       {
-        title: "Piernas",
+        titulo: "Piernas",
         video: "HNosAVcpsz4",
         detalleRutina: "cuadriceps, abductores, aductores, sentadillas",
         categoria: "Entrenamiento",
@@ -20,7 +20,7 @@ module.exports = {
         updatedAt: new Date(),
       },
       {
-        title: "Abdomen",
+        titulo: "Abdomen",
         video: "Pvxj-1dgVk0",
         detalleRutina: "cortos, medios, largos",
         categoria: "Entrenamiento",
@@ -28,7 +28,7 @@ module.exports = {
         updatedAt: new Date(),
       },
       {
-        title: "Hombros",
+        titulo: "Hombros",
         video: "rzM6qoSAuVg",
         detalleRutina: "manguito rotador",
         categoria: "Lesión",
