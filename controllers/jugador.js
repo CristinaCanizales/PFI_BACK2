@@ -23,15 +23,14 @@ module.exports = {
   },
   find(req, res) {
     return jugador
-      .findAll(
-        {
-          where: {
-            numero: req.params.numero,
-            equipo: req.params.equipo,
-          },
-        },
+      .findOne(
         {
           include: [{ all: true }],
+        },
+        {
+          where: {
+            usuarioId: req.query.usuarioId,
+          },
         }
       )
       .then((jugador) => res.status(200).send(jugador))

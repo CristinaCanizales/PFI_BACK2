@@ -40,8 +40,8 @@ module.exports = {
     return testFisico
       .findAll({
         where: {
-          jugadorId: req.params.jugadorId,
-          fechaTest: req.params.fechaTest,
+          jugadorId: req.query.jugadorId,
+          fechaTest: req.query.fechaTest,
         },
       })
       .then((testFisico) => res.status(200).send(testFisico))

@@ -22,7 +22,7 @@ module.exports = {
     return equipo
       .findAll({
         where: {
-          nombre: req.params.nombre,
+          nombre: req.query.nombre,
         },
       })
       .then((equipo) => res.status(200).send(equipo))

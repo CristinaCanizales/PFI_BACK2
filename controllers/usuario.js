@@ -1,5 +1,6 @@
 const Sequelize = require("sequelize");
 const usuario = require("../models").usuario;
+const jugador = require("../models").jugador;
 module.exports = {
   create(req, res) {
     return usuario
@@ -34,7 +35,7 @@ module.exports = {
     return usuario
       .findAll({
         where: {
-          correo: req.params.correo.toLowerCase().trim(),
+          correo: req.query.correo.toLowerCase().trim(),
         },
       })
       .then((usuario) => res.status(200).send(usuario))
@@ -42,6 +43,7 @@ module.exports = {
   },
 
   logIn(req, res) {
+    console.log(req.body);
     return usuario
       .findOne({
         where: {
@@ -53,7 +55,20 @@ module.exports = {
         if (usuario === null) {
           res.status(200).send({ error: "Usuario o contraseña incorrectos" });
         } else {
-          res.status(200).send(usuario);
+          jugador
+            .findOne(
+              {
+                include: [{ all: true }],
+              },
+              {
+                where: {
+                  usuarioId: usuario.id,
+                },
+              }
+            )
+            .then((player) => {
+              res.status(200).send(JSON.stringify(player));
+            });
         }
       })
       .catch((error) => res.status(400).send(error));

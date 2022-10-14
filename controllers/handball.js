@@ -21,8 +21,8 @@ module.exports = {
     return handball
       .findAll({
         where: {
-          jugadorId: req.body.jugadorId,
-          partidoId: req.body.partidoId,
+          jugadorId: req.query.jugadorId,
+          partidoId: req.query.partidoId,
         },
       })
       .then((handball) => res.status(200).send(handball))

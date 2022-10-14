@@ -23,9 +23,9 @@ module.exports = {
     return partido
       .findAll({
         where: {
-          fechaPartido: req.params.fechaPartido,
-          ganadorId: req.params.ganadorId,
-          torneoId: req.params.torneoId,
+          fechaPartido: req.query.fechaPartido,
+          ganadorId: req.query.ganadorId,
+          torneoId: req.query.torneoId,
         },
       })
       .then((partido) => res.status(200).send(partido))

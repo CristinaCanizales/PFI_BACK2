@@ -9,7 +9,7 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       fecha: {
-        type: Sequelize.DATE,
+        type: Sequelize.DATEONLY,
       },
       presente: {
         type: Sequelize.BOOLEAN,
@@ -30,11 +30,11 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE,
+        type: Sequelize.DATEONLY,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE,
+        type: Sequelize.DATEONLY,
       },
     });
   },

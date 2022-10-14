@@ -15,7 +15,6 @@ module.exports = {
   list(_, res) {
     return presentismo
       .findAll({
-        include: [{ all: true }],
       })
       .then((presentismo) => res.status(200).send(presentismo))
       .catch((error) => res.status(400).send(error));
@@ -24,8 +23,8 @@ module.exports = {
     return presentismo
       .findAll({
         where: {
-          fecha: req.params.fecha,
-          usuarioId: req.params.usuarioId,
+          fecha: req.query.fecha,
+          usuarioId: req.query.usuarioId,
         },
       })
       .then((presentismo) => res.status(200).send(presentismo))

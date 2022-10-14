@@ -19,7 +19,7 @@ module.exports = {
     return rol
       .findAll({
         where: {
-          nombre: req.params.nombre,
+          nombre: req.query.nombre,
         },
       })
       .then((rol) => res.status(200).send(rol))

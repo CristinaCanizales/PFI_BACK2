@@ -21,14 +21,17 @@ module.exports = (sequelize, DataTypes) => {
       });
     }
   }
-  presentismo.init({
-    fecha: DataTypes.DATE,
-    presente: DataTypes.BOOLEAN,
-    usuarioId: DataTypes.INTEGER,
-    equipoId: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'presentismo',
-  });
+  presentismo.init(
+    {
+      fecha: DataTypes.DATEONLY,
+      presente: DataTypes.BOOLEAN,
+      usuarioId: DataTypes.INTEGER,
+      equipoId: DataTypes.INTEGER,
+    },
+    {
+      sequelize,
+      modelName: "presentismo",
+    }
+  );
   return presentismo;
 };

@@ -22,7 +22,7 @@ module.exports = {
     return grabacion
       .findAll({
         where: {
-          titulo: req.params.titulo,
+          titulo: req.query.titulo,
         },
       })
       .then((grabacion) => res.status(200).send(grabacion))

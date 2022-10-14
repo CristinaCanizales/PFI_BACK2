@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
   grabacion.init(
     {
       titulo: DataTypes.STRING,
-      fecha: DataTypes.DATE,
+      fecha: DataTypes.DATEONLY,
       partidoId: DataTypes.INTEGER,
       video: DataTypes.STRING,
     },

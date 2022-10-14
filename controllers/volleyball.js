@@ -21,7 +21,7 @@ module.exports = {
     return volleyball
       .findAll({
         where: {
-          titulo: req.params.titulo,
+          titulo: req.query.titulo,
         },
       })
       .then((volleyball) => res.status(200).send(volleyball))

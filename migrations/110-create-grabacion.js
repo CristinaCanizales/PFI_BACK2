@@ -12,7 +12,7 @@ module.exports = {
         type: Sequelize.STRING,
       },
       fecha: {
-        type: Sequelize.DATE,
+        type: Sequelize.DATEONLY,
       },
       partidoId: {
         type: Sequelize.INTEGER,
@@ -26,11 +26,11 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE,
+        type: Sequelize.DATEONLY,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE,
+        type: Sequelize.DATEONLY,
       },
     });
   },

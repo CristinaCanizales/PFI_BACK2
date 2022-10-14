@@ -20,8 +20,8 @@ module.exports = {
     return jugadorRutina
       .findAll({
         where: {
-          jugadorId: req.params.jugadorId,
-          entrenamientoId: req.params.entrenamientoId,
+          jugadorId: req.query.jugadorId,
+          entrenamientoId: req.query.entrenamientoId,
         },
       })
       .then((jugadorRutina) => res.status(200).send(jugadorRutina))
