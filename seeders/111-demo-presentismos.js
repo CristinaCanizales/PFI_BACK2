@@ -23,7 +23,7 @@ module.exports = {
         fecha: new Date(2022, 6, 21),
         presente: true,
         usuarioId: 3,
-        equipoId: 1,
+        equipoId: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
       },

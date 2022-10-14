@@ -4,7 +4,7 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     return queryInterface.bulkInsert("equipos", [
       {
-        nombre: "Primera división",
+        nombre: "Linces",
         genero: "F",
         clubId: 1,
         deporteId: 1,
@@ -12,7 +12,7 @@ module.exports = {
         updatedAt: new Date(),
       },
       {
-        nombre: "Segunda división",
+        nombre: "Los wadistas",
         genero: "F",
         clubId: 1,
         deporteId: 1,
@@ -20,7 +20,7 @@ module.exports = {
         updatedAt: new Date(),
       },
       {
-        nombre: "Primera división",
+        nombre: "Wildcats",
         genero: "M",
         clubId: 2,
         deporteId: 1,
@@ -28,7 +28,7 @@ module.exports = {
         updatedAt: new Date(),
       },
       {
-        nombre: "Primera división",
+        nombre: "Tigres",
         genero: "F",
         clubId: 1,
         deporteId: 3,
