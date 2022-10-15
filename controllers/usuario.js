@@ -55,16 +55,12 @@ module.exports = {
           res.status(200).send({ error: "Usuario o contraseña incorrectos" });
         } else {
           jugador
-            .findOne(
-              {
-                include: [{ all: true }],
+            .findOne({
+              include: [{ all: true }],
+              where: {
+                usuarioId: usuario.id,
               },
-              {
-                where: {
-                  usuarioId: usuario.id,
-                },
-              }
-            )
+            })
             .then((player) => {
               res.status(200).send(JSON.stringify(player));
             });
