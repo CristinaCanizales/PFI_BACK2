@@ -52,7 +52,7 @@ module.exports = {
       })
       .then((usuario) => {
         if (usuario === null) {
-          res.status(200).send({ error: "Usuario o contraseña incorrectos" });
+          res.status(404).send({ error: "Usuario o contraseña incorrectos" });
         } else {
           jugador
             .findOne({
