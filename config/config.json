@@ -1,23 +1,23 @@
 {
   "development": {
-    "username": "${{ secrets.USERNAME }}",
-    "password": "${{ secrets.PASSWORD }}",
-    "database": "${{ secrets.DATABASE }}",
-    "host": "${{ secrets.HOST }}",
+    "username": "root",
+    "password": "1234",
+    "database": "pfi",
+    "host": "35.188.15.199",
     "dialect": "mysql"
   },
   "test": {
-    "USERNAME": "${{ secrets.USERNAME }}",
-    "password": "${{ secrets.PASSWORD }}",
-    "database": "${{ secrets.DATABASE }}",
-    "host": "${{ secrets.HOST }}",
+    "username": "root",
+    "password": "1234",
+    "database": "pfi",
+    "host": "35.188.15.199",
     "dialect": "mysql"
   },
   "production": {
-    "username": "${{ secrets.username }}",
-    "password": "${{ secrets.PASSWORD }}",
-    "database": "${{ secrets.DATABASE }}",
-    "host": "${{ secrets.HOST }}",
+    "username": "root",
+    "password": "1234",
+    "database": "pfi",
+    "host": "35.188.15.199",
     "dialect": "mysql"
   }
 }
