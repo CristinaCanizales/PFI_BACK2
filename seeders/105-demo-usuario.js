@@ -30,7 +30,7 @@ module.exports = {
         updatedAt: new Date(),
       },
       {
-        rolId: 2,
+        rolId: 1,
         nombre: "Pierina",
         apellido: "Tufillaro",
         edad: 25,
@@ -43,7 +43,7 @@ module.exports = {
         updatedAt: new Date(),
       },
       {
-        rolId: 2,
+        rolId: 1,
         nombre: "Nicolás",
         apellido: "Domínguez",
         edad: 25,
