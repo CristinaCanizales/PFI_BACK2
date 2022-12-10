@@ -3,21 +3,21 @@
     "username": "root",
     "password": "1234",
     "database": "pfi",
-    "host": "35.188.15.199",
+    "host": "34.133.151.77",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
     "password": "1234",
     "database": "pfi",
-    "host": "35.188.15.199",
+    "host": "34.133.151.77",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
     "password": "1234",
     "database": "pfi",
-    "host": "35.188.15.199",
+    "host": "34.133.151.77",
     "dialect": "mysql"
   }
 }
